@@ -1,0 +1,1183 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons/streamline-plump-color--web.svg" type="image/x-icon">
+    <title>Dribbble - Discover the World's Top Designers & Creative Professionals </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        *{
+            font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .nav-item{
+            color: black;
+        }
+        .nav-item:hover{
+            color: #7B7193;
+        }
+        /* popular spans line  */
+        .popspan{
+            font-size: 13px;
+            font-weight: bold;
+            color: black;
+        }
+        .popspan:hover{
+            color: #6E6D8B;
+        }
+
+        /* cards caption  */
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .prodiv{
+            background-color: #6e6d8b86;
+            font-size: 11px;
+            /* padding: 10px; */
+        }
+        .prodiv:hover{
+            background-color: black;
+        }
+        .hire{
+            position: relative;
+        }
+        /* top div  */
+        .dark{
+            background-color: #6E6D8B;
+        }
+        .dark:hover{
+            background-color: black;
+        }
+        .new{
+            position: absolute;
+            right: -10px;
+            top: -5px;
+        }
+        .driblink{
+            display: flex;
+            flex-wrap: wrap;
+             gap: 30px;
+        }
+        .driblink a{
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            font-size: 13px;
+        }
+        .scrolling-wrapper{
+            overflow: hidden;
+            padding-bottom: 2%;
+        }
+        .scrolling-content{
+            display: flex;
+            animation: scrollLeft 12s linear infinite;
+        }
+        .scrolling-content img{
+            height: 120px;
+            margin-right: 10px;
+        }
+        @keyframes scrollLeft {
+            from{
+                transform: translateX(0%);
+            }
+            to{
+                transform: translateX(-100%);
+            }
+        }
+
+        .notify{
+            display: block;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        .close:hover .notify{ 
+            display: none;
+        }
+        .dropdown-menu{
+            width: 40vw ;
+        }
+        .hero{
+            margin: 0px 60px 5px 80px; height: 70vh;
+        }
+        .leftp{
+            width: 80%;
+        }
+        .lefth3{
+            font-size: 40px;
+        }
+        .generateDiv{
+            margin: 20px 80px 5px 80px;
+        }
+        #top{
+            margin: 20px 80px 5px 80px;
+        }
+        .discoverImage{
+             width: 20.5vw;
+        }
+        .discoverCards{
+            display: flex;
+            justify-content: space-between;
+        }
+        .discoverCardslast{
+            display: flex;
+            gap: 35px;
+        }
+        .floatImage{
+            width: 13vw;
+        }
+        .dribfooter{
+            padding: 20px 10% 50px 10%;
+        }
+       /* dropdown media query */
+       @media (max-width:767px ) {
+            .dropdown-menu{
+                width: 100%;
+            }
+            .heroleft{
+                text-align: center; 
+            }
+            .leftp{
+                width: 100%;
+            }
+            .lefth3{
+                font-size: 35px;
+            }
+            .hero{
+                margin: 0px 20px 5px 20px;
+            }
+            .searchinp{
+                font-size: 13px;
+            }
+            .generateDiv{
+               margin: 20% 20px 5px 20px;
+            }
+            .hire{
+                width: 50%;
+            }
+            .popspan{
+                display: none;
+            }
+             #top{
+            margin: 20px 20px 5px 20px;
+            }
+            .discoverImage{
+                width: 100%;
+            }
+            .discoverCards, .discoverCardslast{
+                flex-direction: column;
+                gap: 30px;
+            }
+            .floatImage{
+                width: 50vw;
+            }
+            .dribImgBottom, .dribIconBottom, .driblink, .dribfooter2{
+                display: flex;
+                justify-content: center;
+            }
+            .dribfooter1{
+                padding: 20px 8% 50px 8%;
+            }
+            .driblink{
+                gap: 15px;
+            }
+          
+       }
+    </style>
+</head>
+<body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg d-flex justify-content-between gap-2 px-4 py-3">
+        <div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="box-shadow: none !important;">
+            <img src="icons/heroicons-outline--menu-alt-2.svg" alt="">
+        </button>
+            <a class="navbar-brand" href="#"><img src="images/Capture.PNG" alt=""></a>
+        </div> 
+         <a href="login.html" class="btn btn-dark fw-bold rounded-pill text-light px-3 py-2 ms-auto d-lg-none" style="font-size: 12px;">Log in</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 pe-4">
+                    <li class="nav-item dropdown navItem" data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Explore
+                        <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
+                        <ul class="dropdown-menu px-4 py-3 bg-light" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
+                            <li class="d-flex  py-2">
+                                <img src="icons/stash--chart-trend-up-light.svg" alt="" width="35px">
+                                <a class="dropdown-item" href="#" style="font-size: 12px; font-weight: 600;">Popular</a>
+                            </li>
+                            <li class="d-flex  py-2">
+                                <img src="icons/vscode-icons--file-type-gemini.svg" alt="">
+                                <a class="dropdown-item" href="#" style="font-size: 12px; font-weight: 600;">New and Noteworthy</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item py-2" href="#" style="font-size: 12px;">Product Design</a></li>
+                            <li><a class="dropdown-item py-2" href="#" style="font-size: 12px;">Web Design</a></li>
+                            <li><a class="dropdown-item py-2" href="#" style="font-size: 12px;">Animation</a></li>
+                            <li><a class="dropdown-item py-2" href="#" style="font-size: 12px;">Branding</a></li>
+                            <li><a class="dropdown-item py-2" href="#" style="font-size: 12px;">Illustration</a></li>
+                            <li><a class="dropdown-item py-2" href="#" style="font-size: 12px;">Mobile</a></li>
+                            <li><a class="dropdown-item py-2" href="#" style="font-size: 12px;">Typographys</a></li>
+                            <li><a class="dropdown-item py-2" href="#" style="font-size: 12px;">Print</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- hire talent  -->
+                <ul class="navbar-nav mb-2 mb-lg-0 pe-4">
+                     <li class="nav-item dropdown " data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Hire Talent
+                        <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
+                        <div class="dropdown-menu bg-light px-4 py-3" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
+                            <div class="d-block d-lg-flex gap-4 ps-3 pt-3">
+                                <div>
+                                    <div class="start pb-3">
+                                        <div class="d-flex gap-3 ">
+                                            <img src="icons/carbon--report.svg" alt="">
+                                            <span class="fw-bold" style="font-size: 13px;">Start a Project Brief</span>
+                                        </div>
+                                        <p style="padding:10px 0 0 35px; font-size: 12px;" class="text-secondary">Get Instant talent recommendations</p>
+                                    </div>
+                                    <div class="browse pb-3">
+                                        <div class="d-flex gap-3 ">
+                                            <img src="icons/radix-icons--people.svg" alt="">
+                                           <span class="fw-bold" style="font-size: 13px;">Browse Profiles</span>
+                                        </div>
+                                        <p style="padding:10px 0 0 35px; font-size: 12px;" class="text-secondary">Find and message talent directly</p>
+                                    </div>
+                                    <div class="Explore">
+                                        <div class="d-flex gap-3 ">
+                                            <img src="icons/ph--tag-thin.svg" alt="">
+                                           <span class="fw-bold" style="font-size: 13px;">Explore Services</span>
+                                        </div>
+                                        <p style="padding:10px 0 0 35px; font-size: 12px;" class="text-secondary">Hire quickly with pre-packaged services</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="fw-bold" style="font-size: 13px;">Post a Full-Time Job  <img src="icons/solar--arrow-right-outline.svg" alt="" width="13px"></span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex align-items-center gap-3 ps-3">
+                                <img src="icons/akar-icons--book.svg" alt="">
+                                <span class="text-secondary" style="font-size: 13px;">Learn more about how hiring works on Dribbble
+                                    <img src="icons/solar--arrow-right-outline.svg" alt="" width="13px">
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- get hired  -->
+                 <ul class="navbar-nav mb-2 mb-lg-0 pe-4">
+                     <li class="nav-item dropdown " data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Get Hired
+                        <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
+                        <div class="dropdown-menu bg-light px-4 py-3" style=" box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
+                            <div class="d-block d-lg-flex gap-4 ps-3 pt-3">
+                                <div>
+                                    <div class="start pb-3">
+                                        <div class="d-flex gap-3 ">
+                                            <img src="icons/carbon--report.svg" alt="">
+                                            <span class="fw-bold" style="font-size: 13px;">Browse Project Briefs</span>
+                                        </div>
+                                        <p style="padding:10px 0 0 35px; font-size: 12px;" class="text-secondary">Send proposals to clients</p>
+                                    </div>
+                                    <div class="browse pb-3">
+                                        <div class="d-flex gap-3 ">
+                                            <img src="icons/tabler--report.svg" alt="">
+                                           <span class="fw-bold" style="font-size: 13px;">Add a Service</span>
+                                        </div>
+                                        <p style="padding:10px 0 0 35px; font-size: 12px;" class="text-secondary">Let clients purchase your services</p>
+                                    </div>
+                                    <div class="Explore">
+                                        <div class="d-flex gap-3 ">
+                                            <img src="icons/bi--bag.svg" alt="">
+                                           <span class="fw-bold" style="font-size: 13px;">Apply to Full-Time Jobs</span>
+                                        </div>
+                                        <p style="padding:10px 0 0 35px; font-size: 12px;" class="text-secondary">View open design roles</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2" style="flex-direction: column;">
+                                    <span class="fw-bold" style="font-size: 13px;">Upgrade to Pro <img src="icons/solar--arrow-right-outline.svg" alt="" width="13px"></span>
+                                    <span class="fw-bold" style="font-size: 13px;">Advertise with Us <img src="icons/solar--arrow-right-outline.svg" alt="" width="13px"></span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex align-items-center gap-3 ps-3">
+                                <img src="icons/akar-icons--book.svg" alt="">
+                                <span class="text-secondary" style="font-size: 13px;">Learn more about getting hired on Dribbble
+                                    <img src="icons/solar--arrow-right-outline.svg" alt="" width="13px">
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                 
+                <!-- community  -->
+                 <ul class="navbar-nav mb-2 mb-lg-0 pe-4">
+                    <li class="nav-item dropdown" data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Community
+                        <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
+                        <div class="dropdown-menu bg-light px-4 pt-4 pb-3" style=" box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
+                               <div>
+                                    <div class="start pb-3">
+                                        <div class="d-flex gap-3 ">
+                                            <img src="icons/carbon--blog.svg" alt="">
+                                            <a href="blog.html"><span class="fw-bold" style="font-size: 13px;">Blog</span></a>
+                                        </div>
+                                        <p style="padding:10px 0 0 35px; font-size: 12px;" class="text-secondary">Design inspiration, stories, and tips</p>
+                                    </div>
+                                    <div class="browse pb-3">
+                                        <div class="d-flex gap-3 ">
+                                            <img src="icons/solar--cup-outline.svg" alt="">
+                                           <span class="fw-bold" style="font-size: 13px;">Playoffs</span>
+                                        </div>
+                                        <p style="padding:10px 0 0 35px; font-size: 12px;" class="text-secondary">Join creative challenges nd show your skills</p>
+                                    </div>
+                                    <div class="Explore">
+                                        <div class="d-flex gap-3 ">
+                                            <img src="icons/mdi--help-rhombus-outline.svg" alt="">
+                                           <span class="fw-bold" style="font-size: 13px;">Help Center</span>
+                                        </div>
+                                        <p style="padding:10px 0 0 35px; font-size: 12px;" class="text-secondary">Get quick answers and learn how to us Dribbble</p>
+                                    </div>
+                                </div>
+                            <hr>
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="text-secondary" style="font-size: 13px;">Follow Us </span>
+                                <img src="icons/ri--instagram-line.svg" alt="">
+                                <img src="icons/uil--twitter.svg" alt="">
+                                <img src="icons/basil--pinterest-solid.svg" alt="">
+                                <img src="icons/line-md--youtube-filled.svg" alt="">
+                                <img src="icons/ic--round-tiktok.svg" alt="">
+                                <img src="icons/ri--threads-fill.svg" alt="">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            <div class="d-flex ms-auto d-none d-lg-flex">
+                <a class="btn fw-bold" style="color: black; font-size: small; btn:hover{color: #3D3D4E;}" type="submit" href="signup.html">Sign up</a>
+                <a href="login.html" class="btn btn-dark fw-bold rounded-pill text-light px-3 py-2" style="font-size: 12px;">Log in</a>
+            </div>
+        </div>
+       
+</nav>
+<!-- hero section  -->
+<section class="hero pt-3" >
+    <div class="row align-items-center" >
+    <!-- hero left side  -->
+    <div class=" heroleft col-12 col-md-6">
+         <h3 class="fw-bold lefth3 "  >Discover the <br> World's Top Designers</h3>
+         <p class="pb-3 leftp">Explore work from the most talented and accomplished designers ready to take on your next project.</p>
+         <!-- hero buttons  -->
+         <div class="my-3 d-flex gap-2 gap-md-5">
+            <button class="btn btn-dark rounded-pill px-3">
+                <img src="icons/solar--gallery-linear.svg" alt="" width="15px">
+                Shots
+            </button>
+            <button class="btn">
+                <img src="icons/radix-icons--people.svg" alt="" width="20px">
+                Designers
+            </button>
+            <button class="btn">
+                <img src="icons/tabler--file-report.svg" alt="" width="20px">
+                Services
+            </button>
+         </div>
+         <!-- hero search div -->
+         <div class="rounded-pill  d-flex justify-content-between align-items-center" style=" width: 95%; background-color: #F8F8FC; padding: 10px;">
+            <input type="text" placeholder="What type of designs are you interested in?" style="background: none; border: none; outline: none; width: 100%;" class="searchinp">
+            <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; background-color: #EC5E95;"><img src="icons/iconamoon--search-thin.svg" alt=""></div>
+         </div>
+         <!-- Popular line  -->
+          <div class="d-flex gap-2 align-items-center pt-3" style="overflow-x: auto; overflow-y: hidden; white-space: nowrap; scrollbar-width: none; -ms-overflow-style: none;">
+            <span class="fw-medium" style="font-size: small; flex-shrink: 0;">Popular:</span>
+            <button class="btn rounded-pill border border-1" style="font-size: 12px; flex-shrink: 0;">dashboard</button>
+            <button class="btn rounded-pill border border-1" style="font-size: 12px; flex-shrink: 0;">landing page</button>
+            <button class="btn rounded-pill border border-1" style="font-size: 12px; flex-shrink: 0;">e-commerce</button>
+            <button class="btn rounded-pill border border-1" style="font-size: 12px; flex-shrink: 0;">logo</button>
+            <button class="btn rounded-pill border border-1" style="font-size: 12px; flex-shrink: 0;">card</button>
+            <button class="btn rounded-pill border border-1" style="font-size: 12px; flex-shrink: 0;">icons</button>
+          </div>
+    </div>
+    <!-- hero right side  -->
+     
+    <div class="right col-md-6 d-none d-md-block rounded-4">
+        <div id="carouselVideo" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <video class=" w-100 rounded-4 h-100" autoplay muted loop>
+                        <source src="videos/3d47c346ad505c96ef0d2987ea972e76.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video class=" w-100 rounded-4 h-100" autoplay muted loop>
+                        <source src="videos/207c929a31776e3bef96f5a66613b282.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video class=" w-100 rounded-4 h-100" autoplay muted loop>
+                        <source src="videos/55d8f62103d1ecc245b4dd35f264528c.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video class=" w-100 rounded-4 h-100" autoplay muted loop>
+                        <source src="videos/ac62a2fc19e57a12b57074daf22257ab.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video class=" w-100 rounded-4 h-100" autoplay muted loop>
+                        <source src="videos/c0691ec9b6194ee87280db9c77c4d6bc.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video class=" w-100 rounded-4 h-100" autoplay muted loop>
+                        <source src="videos/c3ee9f45c60f0027cadde8a404feaddb.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video class=" w-100 rounded-4 h-100" autoplay muted loop>
+                        <source src="videos/c5c9883a1c959a59c1bdd9c8a7d66632.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video class=" w-100 rounded-4 h-100" autoplay muted loop>
+                        <source src="videos/c84b12685f2e681b81d49ec79fc94648.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video class=" w-100 rounded-4 h-100" autoplay muted loop>
+                        <source src="videos/ef7a619c805e5a92902b0bf034c852fa.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video class=" w-100 rounded-4 h-100" autoplay muted loop>
+                        <source src="videos/ef8d2f9e371433f1fc9620fb33e6cd12.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+</section>
+
+<!-- generate div  -->
+ <div class="w-auto rounded-4 p-4 d-block d-md-flex align-items-center gap-3 generateDiv" style="background-color: #F8F8FC;">
+    <div class="d-flex rounded-pill p-2 px-3 py-2 gap-2 hire" style="background-color: white;">
+        <img src="icons/vscode-icons--file-type-gemini.svg" alt="" width="12px">
+       <span class="fw-medium" style="font-size: 12px;"> Hiring for a project</span>
+        <div class="rounded-pill  text-light fw-medium px-1 new" style="background-color: #EC5E95; font-size: 12px;">New</div>
+    </div>
+   
+    <a href="" style="text-decoration: none; color: black; font-size: 13px;">Generate a brief with AI, instantly connecct with recommended top talent, and receive proposals within minutes
+        <img src="icons/solar--arrow-right-outline.svg" alt="" width="10px">
+    </a>
+ </div>
+
+ <!-- popular div  -->
+  <div class="d-flex align-items-center gap-4" id="top" >
+        <div class="d-flex gap-2 rounded-3 border border-1 me-5 px-3 py-2 ">
+            <span style="font-size: 12px;">Popular</span>
+            <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
+        </div>
+        <div class="py-2 px-3 rounded-pill d-none d-lg-block" style="background-color: #F5F3F0;">
+            <span class="popspan">Discover</span>
+        </div>
+        <div>
+            <span class="popspan">Animation</span>
+        </div>
+        <div>
+            <span class="popspan">Branding</span>
+        </div>
+        <div>
+            <span class="popspan">Illustration</span>
+        </div>
+        <div>
+            <span class="popspan">Mobile</span>
+        </div>
+        <div>
+            <span class="popspan">Print</span>
+        </div>
+        <div>
+            <span class="popspan">Product Design</span>
+        </div>
+        <div>
+            <span class="popspan" >Typography</span>
+        </div>
+        <div>
+            <span class="popspan">Web Design</span>
+        </div>
+        <div class="ms-auto rounded-pill border border-1 ps-2 pe-3 py-1 d-flex gap-2">
+            <img src="icons/bx--filter.svg" alt="">
+            <span style="font-size: 12px;">Filter</span>
+        </div>
+  </div>
+  <!-- Discover images cards -->
+    <!-- first row -->
+  <section class="discoverCards"  style="margin:20px 5% 3% 5%; width: 90%;">
+        <!-- first card  -->
+    <div>
+        <img src="images/1.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/one.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Paperpillar</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">113</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">11.3k</span>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd card  -->
+         <div>
+        <img src="images/2.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+             <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/two.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Plainthing Studio</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">113</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">11.3k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3rd card  -->
+         <div >
+        <img src="images/3.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/three.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Korsa</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">113</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">11.3k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4th card  -->
+         <div>
+        <img src="images/4.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/four.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Ofspace UX/UI</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">113</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">11.3k</span>
+                </div>
+            </div>
+        </div>
+  </section>
+   <!-- second row -->
+     <section class="discoverCards" style="margin:3% 5% 2% 5%; width: 90%;">
+        <!-- first card  -->
+    <div >
+        <img src="images/5.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+           <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/five.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Geex Arts</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">141</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">29.3k</span>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd card  -->
+         <div>
+        <img src="images/6.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/six.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Ronas IT| UI/UX Tea.. </span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">78</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">3.3k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3rd card  -->
+         <div >
+        <img src="images/7.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+           <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/seven.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Ethan Fender</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">PRO</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">63</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">18.8k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4th card  -->
+         <div>
+        <img src="images/8.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/eight.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">MUTI</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">PRO</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">79</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">29.3k</span>
+                </div>
+            </div>
+        </div>
+  </section>
+<!-- third row  -->
+  <section class="discoverCards" style="margin:3% 5% 2% 5%; width: 90%;">
+        <!-- first card  -->
+    <div >
+        <img src="images/9.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+           <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/nine.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Samuel Otavanus</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">PRO</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">64</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">2.7k</span>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd card  -->
+         <div>
+        <img src="images/10.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/ten.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Purrweb UI/UX Agent</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">PRO</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">86</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">1.8k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3rd card  -->
+         <div >
+        <img src="images/11.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/eleven.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Lepisov Branding</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">85</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">95.6k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4th card  -->
+         <div>
+        <img src="images/12.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+             <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/twelve.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Layo</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">PRO</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">42</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">253</span>
+                </div>
+            </div>
+        </div>
+
+        
+       
+
+  </section>
+  <!-- fourth row  -->
+    <section class="discoverCards" style="margin:3% 5% 2% 5%; width: 90%;">
+        <!-- first card  -->
+    <div >
+        <img src="images/13.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/thirteen.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Nixtio</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">233</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">52.6k</span>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd card  -->
+         <div>
+        <img src="images/14.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/fourteen.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">TypeO8(Alen Pavlovic)</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">PRO</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">94</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">25k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3rd card  -->
+         <div >
+        <img src="images/15.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/fifteen.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">strangeHelix</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">PRO</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">56</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">1.9k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4th card  -->
+         <div>
+        <img src="images/16.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/sixteen.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">widelab</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">13</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">708</span>
+                </div>
+            </div>
+        </div>
+  </section>
+  <!-- fifth row  -->
+    <section class="discoverCards" style="margin:3% 5% 2% 5%; width: 90%;">
+        <!-- first card  -->
+    <div >
+        <img src="images/17.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/seventeen.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">catalyst</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">PRO</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">17</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">1.4k</span>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd card  -->
+         <div>
+        <img src="images/18.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/eighteen.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Tyler Pate</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">PRO</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">44</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">6.7k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3rd card  -->
+         <div >
+        <img src="images/19.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/nineteen.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">OnPoint Studio</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">94</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">3.3k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4th card  -->
+         <div>
+        <img src="images/20.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+             <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/twenty.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Abu Bokkor Siddik</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">PRO</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">51</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">2.1k</span>
+                </div>
+            </div>
+        </div>
+  </section>
+  <!-- sixth row  -->
+    <section class="discoverCardslast" style="margin:3% 5% 2% 5%; width: 90%;">
+        <!-- first card  -->
+    <div >
+        <img src="images/21.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh; ">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+           
+                 <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/thntyone.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">HALO LAB</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">141</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">19k</span>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd card  -->
+         <div>
+        <img src="images/22.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
+            <!-- caption  -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- left  -->
+            <div class="d-flex gap-2 align-items-center">
+                <a href="">
+                <img src="images/twntytwo.webp" alt="" class="rounded-circle" style="width: 20px; height: 20px;">
+                 <span class="fw-medium" style="font-size: 13px;">Fikri Studio</span>
+                </a>
+                <div class="fw-bold px-1 text-light rounded-2 prodiv">TEAAM</div>
+            </div>
+               <!-- right  -->
+                <div class="d-flex align-items-center gap-2">
+                    <img src="icons/solar--heart-bold.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">41</span>
+                    <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
+                    <span style="font-size: 11px;">1.8k</span>
+                </div>
+            </div>
+        </div>
+
+    
+
+       
+  </section>
+
+ <!-- button under images  -->
+ <div class="d-flex" style="margin-bottom: 5%; margin-top: 5%;">
+     <button class="btn btn-dark rounded-pill mx-auto fw-bold" style="font-size: 12px;"> Sign up to continue</button>
+     <div class="rounded-circle dark d-flex justify-content-center align-items-center " style="width: 50px; height: 50px;" >
+        <a href="#top"><img src="icons/mynaui--arrow-up.svg" alt="" width="30px"></a>
+    </div>
+ </div>
+
+  <!-- floating images  -->
+  <div class="scrolling-wrapper d-flex">
+    <div class="scrolling-content">
+        <div>
+            <img src="images/print.webp" alt="" class="rounded-3 floatImage" >
+            <p class="py-3 fw-medium " style="font-size: 13px;">Print</p>
+        </div>
+        <div>
+            <img src="images/branding.webp" alt="" class="rounded-3 floatImage" >
+            <p class="py-3 fw-medium " style="font-size: 13px;">Branding</p>
+        </div>
+        <div>
+            <img src="images/animation.webp" alt="" class="rounded-3 floatImage" >
+            <p class="py-3 fw-medium " style="font-size: 13px;">Animation</p>
+        </div>
+         <div>
+            <img src="images/mobile.webp" alt="" class="rounded-3 floatImage" >
+            <p class="py-3 fw-medium " style="font-size: 13px;">Mobile</p>
+        </div>
+        <div>
+            <img src="images/typography.webp" alt="" class="rounded-3 floatImage" >
+            <p class="py-3 fw-medium " style="font-size: 13px;">Typography</p>
+        </div>
+         <div>
+            <img src="images/webdesign.webp" alt="" class="rounded-3 floatImage" >
+            <p class="py-3 fw-medium " style="font-size: 13px;">Web Design</p>
+        </div>
+         <div>
+            <img src="images/productdesign.webp" alt="" class="rounded-3 floatImage" >
+            <p class="py-3 fw-medium " style="font-size: 13px;">Product Design</p>
+        </div>
+         <div>
+            <img src="images/illustration.webp" alt="" class="rounded-3 floatImage" >
+            <p class="py-3 fw-medium " style="font-size: 13px;">Illustration</p>
+        </div>         
+    </div>
+    <div aria-hidden class="scrolling-content">
+         <div>
+            <img src="images/print.webp" alt="" class="rounded-3" style="width: 13vw;">
+            <p class="py-3 fw-medium " style="font-size: 13px;">Print</p>
+        </div>
+        <div>
+            <img src="images/branding.webp" alt="" class="rounded-3" style="width: 13vw;">
+            <p class="py-3 fw-medium " style="font-size: 13px;">Branding</p>
+        </div>
+        <div>
+            <img src="images/animation.webp" alt="" class="rounded-3" style="width: 13vw;">
+            <p class="py-3 fw-medium " style="font-size: 13px;">Animation</p>
+        </div>
+         <div>
+            <img src="images/mobile.webp" alt="" class="rounded-3" style="width: 13vw;">
+            <p class="py-3 fw-medium " style="font-size: 13px;">Mobile</p>
+        </div>
+        <div>
+            <img src="images/typography.webp" alt="" class="rounded-3" style="width: 13vw;">
+            <p class="py-3 fw-medium " style="font-size: 13px;">Typography</p>
+        </div>
+         <div>
+            <img src="images/webdesign.webp" alt="" class="rounded-3" style="width: 13vw;">
+            <p class="py-3 fw-medium " style="font-size: 13px;">Web Design</p>
+        </div>
+         <div>
+            <img src="images/productdesign.webp" alt="" class="rounded-3" style="width: 13vw;">
+            <p class="py-3 fw-medium " style="font-size: 13px;">Product Design</p>
+        </div>
+         <div>
+            <img src="images/illustration.webp" alt="" class="rounded-3" style="width: 13vw;">
+            <p class="py-3 fw-medium " style="font-size: 13px;">Illustration</p>
+        </div>
+    </div>
+  </div>
+
+
+  <!-- dribble with contact icons  -->
+   <div class="d-block d-lg-flex justify-content-between align-items-center dribfooter1" >
+    <div class="dribImgBottom">
+        <img src="images/Capture.PNG" alt="" width="150px">
+    </div>
+    <!-- links div  -->
+    <div class="driblink" >
+        <a href="">For designers</a>
+        <a href="">Hire talent</a>
+        <a href="">Inspiration</a>
+        <a href="">Advertising</a>
+        <a href="">Blog</a>
+        <a href="">About</a>
+        <a href="">Careers</a>
+        <a href="">Support</a>
+    </div>
+    <!-- icons div  -->
+    <div class="d-flex gap-3 pt-4 dribIconBottom">
+        <img src="icons/uil--twitter.svg" alt="">
+        <img src="icons/mdi--facebook.svg" alt="">
+        <img src="icons/ri--instagram-line.svg" alt="">
+        <img src="icons/basil--pinterest-solid.svg" alt="">
+    </div>
+   </div>
+
+
+   <!-- footer  -->
+    <footer style="padding: 3% 10% 5% 10%;" class=" d-block d-lg-flex justify-content-between ">
+        <div class="d-flex gap-3 text-secondary dribfooter2" style="font-size: 12px;">
+            <span>&copy; 2025 Dribbble</span>
+            <span>Terms</span>
+            <span>Privacy</span>
+            <span>Cookies</span>
+        </div>
+        <div class="d-flex gap-3 text-secondary dribfooter2" style="font-size: 12px;">
+            <span >Jobs</span>
+            <span>Designers</span>
+            <span>Freelancers</span>
+            <span>Tags</span>
+            <span>Places</span>
+            <span>Resources</span>
+        </div>
+    </footer>
+    <!-- notification  -->
+     <div class="d-lg-flex d-none justify-content-between p-3 align-items-center notify" style="background-color: #0D0C22;">
+        <span class="text-light fw-bold ms-auto" style="font-size: 15px;">New clients get $100 off their first payment of $1,000+ to a designer on Dribbble with code HELLO100 🎉</span>
+        <button class="btn btn-light text-dark rounded-pill " style="font-size: 11px; margin-left: 2%; margin-right: 10%;">Terms Apply</button>
+        <div class="rounded-circle p-1 d-flex close" style="background-color: #565564;">
+            <img src="icons/iconoir--cancel.svg" alt="">
+        </div>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+</body>
+</html>
