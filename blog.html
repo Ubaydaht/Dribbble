@@ -39,19 +39,31 @@
             font-weight: 500;
             font-size: 13px;
         }
+        .blogTxt{
+            font-size: 19px;
+        }
+        @media (max-width:991px) {
+            .blogImg{
+                width: 100%;
+            }
+            .blogTxt{
+                font-size: 15px;
+            }
+        }
      </style>
 </head>
 <body>
     <!-- nav bar  -->
-  <nav class="navbar navbar-expand-lg d-flex justify-content-between gap-2 px-4 py-3" style="position: sticky; top: 0; background-color: white;">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+     <nav class="navbar navbar-expand-lg d-flex justify-content-between gap-2 px-4 py-3">
         <div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="box-shadow: none !important;">
+            <img src="icons/heroicons-outline--menu-alt-2.svg" alt="">
+        </button>
             <a class="navbar-brand" href="#"><img src="images/Capture.PNG" alt=""></a>
         </div> 
-             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="rounded-pill  d-flex justify-content-between align-items-center" style=" width: 40%; background-color: #F8F8FC; padding: 10px;">
+         <a href="login.html" class="btn btn-dark fw-bold rounded-pill text-light px-3 py-2 ms-auto d-lg-none" style="font-size: 12px;">Log in</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 <div class="rounded-pill  d-flex justify-content-between align-items-center" style=" width: 40%; background-color: #F8F8FC; padding: 10px;">
                      <input type="text" placeholder="What type of designs are you interested in?" style="background: none; border: none; outline: none; width: 76%; font-size: 13px;">
                      <div class="d-flex">
                         <span>Shots</span>
@@ -62,7 +74,7 @@
                 <ul class="navbar-nav mb-2 mb-lg-0 pe-4 ps-3">
                     <li class="nav-item dropdown navItem" data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Explore
                         <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
-                        <ul class="dropdown-menu px-4 py-3 bg-light" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
+                        <ul class="dropdown-menu px-4 py-3 bg-light" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none; width: 15vw;">
                             <li class="d-flex  py-2">
                                 <img src="icons/stash--chart-trend-up-light.svg" alt="" width="35px">
                                 <a class="dropdown-item" href="#" style="font-size: 12px; font-weight: 600;">Popular</a>
@@ -87,8 +99,8 @@
                 <ul class="navbar-nav mb-2 mb-lg-0 pe-4">
                      <li class="nav-item dropdown " data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Hire Talent
                         <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
-                        <div class="dropdown-menu bg-light px-4 py-3" style="width: 40vw; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
-                            <div class="d-flex gap-4 ps-3 pt-3">
+                        <div class="dropdown-menu bg-light px-4 py-3" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
+                            <div class="d-block d-lg-flex gap-4 ps-3 pt-3">
                                 <div>
                                     <div class="start pb-3">
                                         <div class="d-flex gap-3 ">
@@ -130,8 +142,8 @@
                  <ul class="navbar-nav mb-2 mb-lg-0 pe-4">
                      <li class="nav-item dropdown " data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Get Hired
                         <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
-                        <div class="dropdown-menu bg-light px-4 py-3" style="width: 40vw; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
-                            <div class="d-flex gap-4 ps-3 pt-3">
+                        <div class="dropdown-menu bg-light px-4 py-3" style=" box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
+                            <div class="d-block d-lg-flex gap-4 ps-3 pt-3">
                                 <div>
                                     <div class="start pb-3">
                                         <div class="d-flex gap-3 ">
@@ -175,15 +187,17 @@
                  <ul class="navbar-nav mb-2 mb-lg-0 pe-4">
                     <li class="nav-item dropdown" data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Community
                         <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
-                        <div class="dropdown-menu bg-light px-4 pt-4 pb-3" style="width: 30vw; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
+                        <div class="dropdown-menu bg-light px-4 pt-4 pb-3" style=" box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;width: 25vw;">
                                <div>
+                                    <a href="blog.html" style="text-decoration: none; color: inherit;">
                                     <div class="start pb-3">
                                         <div class="d-flex gap-3 ">
                                             <img src="icons/carbon--blog.svg" alt="">
-                                           <a href="blog.html" class="fw-bold" style="font-size: 13px;">Blog</a>
+                                            <span class="fw-bold" style="font-size: 13px;">Blog</span>
                                         </div>
                                         <p style="padding:10px 0 0 35px; font-size: 12px;" class="text-secondary">Design inspiration, stories, and tips</p>
                                     </div>
+                                    </a>
                                     <div class="browse pb-3">
                                         <div class="d-flex gap-3 ">
                                             <img src="icons/solar--cup-outline.svg" alt="">
@@ -213,12 +227,21 @@
                     </li>
                 </ul>
 
-            <div class="d-flex ms-auto">
+            <div class="d-flex ms-auto d-none d-lg-flex">
                 <a class="btn fw-bold" style="color: black; font-size: small; btn:hover{color: #3D3D4E;}" type="submit" href="signup.html">Sign up</a>
-                <button class="btn btn-dark fw-bold rounded-pill text-light px-3 py-2" style="font-size: 12px;" type="submit">Log in</button>
+                <a href="login.html" class="btn btn-dark fw-bold rounded-pill text-light px-3 py-2" style="font-size: 12px;">Log in</a>
             </div>
         </div>
+       
 </nav>
+<div class="rounded-pill  d-flex justify-content-between align-items-center d-lg-none" style=" width: 90%; background-color: #F8F8FC; padding: 10px; margin: 0 5%;">
+                     <input type="text" placeholder="What type of designs are you interested in?" style="background: none; border: none; outline: none; width: 76%; font-size: 13px;">
+                     <div class="d-flex">
+                        <span>Shots</span>
+                        <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="">
+                     </div>
+                    <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; background-color: #EC5E95;"><img src="icons/iconamoon--search-thin.svg" alt=""></div>
+                </div>
     <!-- blog section  -->
     <section class="container" style="padding-top: 10%;">
         <h1 class="fs-1 fw-bold pb-5">Courtside: <br> The Dribbble Blog</h1>
@@ -229,89 +252,89 @@
                 <img src="images/blog.webp" alt="" width="100%">
                 <span class="" style="font-size: 18px;">With roots in Ukraine and a growing team in Miami and Valencia, Nixito has built a creative practice that spans UX/UI, 3D, branding, and mobile. In this feature, they share how they turned early rejections into creative fuel, how Dribbble’s marketplace supercharged their client pipeline, and why adaptability, not a signature style, is their secret weapon.</span>
                 <hr>
-                <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog1.webp" alt="" width="20%" height="40%">
+                <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog1.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span  class="text-secondary" style="font-size: 13px;">SEPT 22, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">How Heartbeat Design Studio Rebuilt Hyros with Speed, Style, and Substance</a>
-                        <span class="text-secondary" style="font-size: 19px;">When Hyros needed a fast, full-scale rebrand, they turned to Heartbeat Design Studio and wound up finding a partner who could match their speed and vision. In just a month, the Ukraine-based team delivered a new site, visual identity, and animation system that reflected the platform’s enterprise credibility and creative edge. Here’s how a Dribbble DM turned into one of Heartbeat’s most meaningful collaborations to date.</span>
+                        <span class="text-secondary blogTxt">When Hyros needed a fast, full-scale rebrand, they turned to Heartbeat Design Studio and wound up finding a partner who could match their speed and vision. In just a month, the Ukraine-based team delivered a new site, visual identity, and animation system that reflected the platform’s enterprise credibility and creative edge. Here’s how a Dribbble DM turned into one of Heartbeat’s most meaningful collaborations to date.</span>
                     </div>
                 </div>
                 <hr>
-                <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog2.webp" alt="" width="20%" height="40%">
+                <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog2.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">SEPT 9, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Work In Progress, Part 13 🚧</a>
-                        <span class="text-secondary" style="font-size: 19px;">Results from our first year as a revenue-sharing marketplace, plus our latest product releases — including InstantMatch!</span>
+                        <span class="text-secondary blogTxt">Results from our first year as a revenue-sharing marketplace, plus our latest product releases — including InstantMatch!</span>
                     </div>
                 </div>
                 <hr>
-                <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog3.webp" alt="" width="20%" height="40%">
+                <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog3.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">SEPT 2, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Playing the Long Game, Letting the Sketches Fly, and Why Dribbble Matters</a>
-                        <span class="text-secondary" style="font-size: 19px;">From freelance to feature-worthy, Wells Collins has built a career on curiosity, consistency, and craft. Known for his expressive hand-lettered wordmarks and bold, organic logos, the Denver-based designer has turned Dribbble into a launchpad for his dream projects, and he’s done it all by showing the work he wants to be hired for. We talked about doodling, process, passion, and why throwing out your first five pages of sketches might be the best thing you ever do.</span>
+                        <span class="text-secondary blogTxt">From freelance to feature-worthy, Wells Collins has built a career on curiosity, consistency, and craft. Known for his expressive hand-lettered wordmarks and bold, organic logos, the Denver-based designer has turned Dribbble into a launchpad for his dream projects, and he’s done it all by showing the work he wants to be hired for. We talked about doodling, process, passion, and why throwing out your first five pages of sketches might be the best thing you ever do.</span>
                     </div>
                 </div>
                 <hr>
-                <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog4.webp" alt="" width="20%" height="40%">
+                <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog4.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">JULY 29, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Work In Progress, Part 12 🚧</a>
-                        <span class="text-secondary" style="font-size: 19px;">Learn more about our latest product releases and their early impact on lead flow to designers.</span>
+                        <span class="text-secondary blogTxt">Learn more about our latest product releases and their early impact on lead flow to designers.</span>
                     </div>
                 </div>
                 <hr>
-                <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog5.webp" alt=""width="20%" height="40%">
+                <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog5.webp" alt=""width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">JUNE 25, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Work In Progress, Part 11 🚧</a>
-                        <span class="text-secondary" style="font-size: 19px;">Learn more about June’s product releases and their early impact on lead flow to designers.</span>
+                        <span class="text-secondary blogTxt">Learn more about June’s product releases and their early impact on lead flow to designers.</span>
                     </div>
                 </div>
                 <hr>
-                <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog6.webp" alt="" width="20%" height="40%">
+                <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog6.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">JUN 16, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Celebrating Pride Month Through Design</a>
-                        <span class="text-secondary" style="font-size: 19px;">Dribbble is proud to celebrate the LGBTQIA+ community through design. We’ve curated a selection of impactful Pride-themed artwork from our talented designers, each sharing their connection to the work and the deeper meaning behind their creations.</span>
+                        <span class="text-secondary blogTxt">Dribbble is proud to celebrate the LGBTQIA+ community through design. We’ve curated a selection of impactful Pride-themed artwork from our talented designers, each sharing their connection to the work and the deeper meaning behind their creations.</span>
                     </div>
                 </div>
                 <hr>
-                  <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog7.webp" alt="" width="20%" height="40%">
+                  <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog7.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">JUN 16, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Unlock opportunities and showcase your skills with a Webflow Expert badge</a>
-                        <span class="text-secondary" style="font-size: 19px;">If you’re a designer who has mastered Webflow and wants to show off your skills, you can earn an Expert badge for your Dribbble profile and appear on our exclusive Webflow Expert landing page.</span>
+                        <span class="text-secondary blogTxt">If you’re a designer who has mastered Webflow and wants to show off your skills, you can earn an Expert badge for your Dribbble profile and appear on our exclusive Webflow Expert landing page.</span>
                     </div>
                 </div>
                 <hr>
-                 <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog8.webp" alt="" width="20%" height="40%">
+                 <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog8.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">MAY 28, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Balkan Bros: Building a Legacy of Trust from Progressive Insurance to AWS</a>
-                        <span class="text-secondary" style="font-size: 19px;">BB Agency’s success story is built on the power of long-term relationships and creative innovation. When a design project for Progressive Insurance led to a new product design for AWS, BB Agency’s seamless transition across industries and companies created a lasting impression of trust and consistency. Explore how they navigated these partnerships and how platforms like Dribbble played a crucial role in their growth and visibility.</span>
+                        <span class="text-secondary blogTxt">BB Agency’s success story is built on the power of long-term relationships and creative innovation. When a design project for Progressive Insurance led to a new product design for AWS, BB Agency’s seamless transition across industries and companies created a lasting impression of trust and consistency. Explore how they navigated these partnerships and how platforms like Dribbble played a crucial role in their growth and visibility.</span>
                     </div>
                 </div>
                 <hr>
-                <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog14.webp" alt="" width="20%" height="40%">
+                <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog14.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">MAR 17, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Work In Progress, Part 9 🚧</a>
-                        <span class="text-secondary" style="font-size: 19px;">Dribbble’s mission is to help professional designers earn a living doing work they take pride in, and the Dribbble team is responsible for managing the business in a way that ensures it can continue fulfilling that mission in perpetuity. That’s why we’re pivoting from an advertising-supported community to a revenue-sharing marketplace.</span>
+                        <span class="text-secondary blogTxt" >Dribbble’s mission is to help professional designers earn a living doing work they take pride in, and the Dribbble team is responsible for managing the business in a way that ensures it can continue fulfilling that mission in perpetuity. That’s why we’re pivoting from an advertising-supported community to a revenue-sharing marketplace.</span>
                     </div>
                 </div>
                 <hr>
-                 <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog15.webp" alt="" width="20%" height="40%">
+                 <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog15.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">MAR 4, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Work In Progress, Part 8 🚧</a>
@@ -319,39 +342,39 @@
                     </div>
                 </div>
                 <hr>
-                 <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog16.webp" alt="" width="20%" height="40%">
+                 <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog16.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">MAR 3, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Infusing Retro Boldness into Outdoor Design</a>
-                        <span class="text-secondary" style="font-size: 19px;">We interviewed Danielle Podeszek, a Buffalo-based designer and founder of Pod Design Shop, who has spent over a decade honing her expertise in logo design, apparel, and merchandise for outdoor and athletic brands.</span>
+                        <span class="text-secondary blogTxt" >We interviewed Danielle Podeszek, a Buffalo-based designer and founder of Pod Design Shop, who has spent over a decade honing her expertise in logo design, apparel, and merchandise for outdoor and athletic brands.</span>
                     </div>
                 </div>
                 <hr>
-                <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog17.webp" alt="" width="20%" height="40%">
+                <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog17.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">FEB 10, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Frans Bergström: Elevating Digital Products with Purposeful Illustration</a>
-                        <span class="text-secondary" style="font-size: 19px;">We interviewed Frans Bergström, a product designer who continues to resonate within the creative community. His unique approach—fuzing storytelling with design—and passion for illustration and motion design have established him as a sought-after designer.</span>
+                        <span class="text-secondary blogTxt" >We interviewed Frans Bergström, a product designer who continues to resonate within the creative community. His unique approach—fuzing storytelling with design—and passion for illustration and motion design have established him as a sought-after designer.</span>
                     </div>
                 </div>
                 <hr>
-                 <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog18.webp" alt="" width="20%" height="40%">
+                 <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog18.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">FEB 5, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Work In Progress, Part 7 🚧</a>
-                        <span class="text-secondary" style="font-size: 19px;">We just released Milestones, a feature that enables designers to receive payouts incrementally as each phase of their project is completed (and even before work has begun if they negotiate an upfront payment with their client). This has been one of the most requested new features by both clients and designers.</span>
+                        <span class="text-secondary blogTxt" >We just released Milestones, a feature that enables designers to receive payouts incrementally as each phase of their project is completed (and even before work has begun if they negotiate an upfront payment with their client). This has been one of the most requested new features by both clients and designers.</span>
                     </div>
                 </div>
                 <hr>
-                 <div class="d-flex gap-4 w-100 py-2">
-                    <img src="images/blog19.webp" alt="" width="20%" height="40%">
+                 <div class="d-block d-lg-flex gap-4 w-100 py-2">
+                    <img src="images/blog19.webp" alt="" width="20%" height="40%" class="blogImg">
                     <div>
                         <span class="text-secondary" style="font-size: 13px;">DEC 17, 2025.</span>
                         <a href="" class="d-block fs-4 fw-medium text-decoration-none text-dark">Work In Progress, Part 6 🚧</a>
-                        <span class="text-secondary" style="font-size: 19px;">Last week, we released Services, allowing designers to sell freelance services that can be purchased instantly on Dribbble. Designers outline the work offered and set the price, completion time, number of revisions, and any other specifications they want to include.</span>
+                        <span class="text-secondary blogTxt" >Last week, we released Services, allowing designers to sell freelance services that can be purchased instantly on Dribbble. Designers outline the work offered and set the price, completion time, number of revisions, and any other specifications they want to include.</span>
                     </div>
                 </div>
                 <hr>
@@ -507,6 +530,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script>
+        document.querySelectorAll('a[href="blog.html"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.location.href = 'blog.html';
+            });
+        });
+    </script>
 </body>
 </html>
 
