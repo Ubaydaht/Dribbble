@@ -11,6 +11,7 @@
         }
         .nav-item{
             color: black;
+            font-size: 12px;
         }
         .nav-item:hover{
             color: #7B7193;
@@ -84,6 +85,12 @@
                 transform: translateX(-50%);
             }
         }
+        .hoverContent{
+            display: none;
+        }
+        .contentCard:hover .hoverContent{
+            display: block;
+        }
 
         .notify{
             display: block;
@@ -133,10 +140,36 @@
             width: 95%;
             padding: 12px;
         }
+        .popularDropdown{
+            width: 15vw;
+        }
+        .blogDropdown{
+            width: 25vw;
+        }
+        .hoverContent{
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .contentCard:hover .hoverContent{
+            opacity: 1;
+        }
+        .playbtn:hover img{
+            content: url(icons/solar--play-bold\ \(1\).svg);
+        }
        /* dropdown media query */
        @media (max-width:991px ) {
+            .nav-item{
+                font-size: 16px;
+                padding: 5px ;
+            }
             .dropdown-menu{
                 width: 100%;
+            }
+            .popularDropdown{
+                width: 50vw;
+            }
+            .blogDropdown{
+            width: 80vw;
             }
             .heroleft{
                 text-align: center; 
@@ -196,7 +229,7 @@
             font-size: 13px;
           }
           .generateDiv{
-            margin: 20px 20px 5px 20px;
+            margin: 0px 20px 5px 20px;
           }
         }
     </style>
@@ -206,16 +239,16 @@
     <nav class="navbar navbar-expand-lg d-flex justify-content-between gap-2 px-4 py-3">
         <div>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="box-shadow: none !important;">
-            <img src="icons/heroicons-outline--menu-alt-2.svg" alt="">
+            <img src="icons/heroicons-outline--menu-alt-2.svg" alt="" width="35px">
         </button>
             <a class="navbar-brand" href="#"><img src="images/Capture.PNG" alt=""></a>
         </div> 
          <a href="login.html" class="btn btn-dark fw-bold rounded-pill text-light px-3 py-2 ms-auto d-lg-none" style="font-size: 12px;">Log in</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 pe-4">
-                    <li class="nav-item dropdown navItem" data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Explore
+                    <li class="nav-item dropdown navItem" data-bs-toggle="dropdown" style=" font-weight: 600;" > Explore
                         <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
-                        <ul class="dropdown-menu px-4 py-3 bg-light" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none; width: 15vw;">
+                        <ul class="dropdown-menu px-4 py-3 bg-light popularDropdown" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
                             <li class="d-flex  py-2">
                                 <img src="icons/stash--chart-trend-up-light.svg" alt="" width="35px">
                                 <a class="dropdown-item" href="#" style="font-size: 12px; font-weight: 600;">Popular</a>
@@ -238,7 +271,7 @@
                 </ul>
                 <!-- hire talent  -->
                 <ul class="navbar-nav mb-2 mb-lg-0 pe-4">
-                     <li class="nav-item dropdown " data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Hire Talent
+                     <li class="nav-item dropdown " data-bs-toggle="dropdown" style="font-weight: 600;" > Hire Talent
                         <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
                         <div class="dropdown-menu bg-light px-4 py-3" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
                             <div class="d-block d-lg-flex gap-4 ps-3 pt-3">
@@ -281,7 +314,7 @@
                 </ul>
                 <!-- get hired  -->
                  <ul class="navbar-nav mb-2 mb-lg-0 pe-4">
-                     <li class="nav-item dropdown " data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Get Hired
+                     <li class="nav-item dropdown " data-bs-toggle="dropdown" style="font-weight: 600;" > Get Hired
                         <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
                         <div class="dropdown-menu bg-light px-4 py-3" style=" box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
                             <div class="d-block d-lg-flex gap-4 ps-3 pt-3">
@@ -326,9 +359,9 @@
                  
                 <!-- community  -->
                  <ul class="navbar-nav mb-2 mb-lg-0 pe-4">
-                    <li class="nav-item dropdown" data-bs-toggle="dropdown" style="font-size: 12px; font-weight: 600;" > Community
+                    <li class="nav-item dropdown" data-bs-toggle="dropdown" style="font-weight: 600;" > Community
                         <img src="icons/iconamoon--arrow-down-2-light (2).svg" alt="" width="15px">
-                        <div class="dropdown-menu bg-light px-4 pt-4 pb-3" style=" box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;width: 25vw;">
+                        <div class="dropdown-menu bg-light px-4 pt-4 pb-3 blogDropdown" style=" box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); border: none;">
                                <div>
                                 <a href="blog.html">
                                     <div class="start pb-3">
@@ -368,7 +401,9 @@
                         </div>
                     </li>
                 </ul>
-
+                <ul class="navbar-nav my-3 mb-lg-0 pe-4 d-lg-none ">
+                    <li style="font-size: 16px; font-weight: 600; color: #EA4C89;">Start Project Brief</li>
+                </ul>
             <div class="d-flex ms-auto d-none d-lg-flex">
                 <a class="btn fw-bold" style="color: black; font-size: small; btn:hover{color: #3D3D4E;}" type="submit" href="signup.html">Sign up</a>
                 <a href="login.html" class="btn btn-dark fw-bold rounded-pill text-light px-3 py-2" style="font-size: 12px;">Log in</a>
@@ -377,7 +412,7 @@
        
 </nav>
 <!-- hero section  -->
-<section class="hero pt-3 mb-3 ">
+<section class="hero pt-3">
     <div class="row align-items-center" >
     <!-- hero left side  -->
     <div class=" heroleft col-12 col-md-6">
@@ -416,58 +451,128 @@
     </div>
     <!-- hero right side  -->
      
-    <div class="right col-md-6 d-none d-md-block rounded-4">
+    <div class="right col-md-6 d-none d-md-block rounded-4" style="position: relative;">
         <div id="carouselVideo" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
+            <div class="carousel-inner" >
                 <div class="carousel-item active">
                     <video class=" w-100 rounded-4 h-100" autoplay muted loop>
                         <source src="videos/3d47c346ad505c96ef0d2987ea972e76.mp4" type="video/mp4">
                     </video>
+                    <div class="carousel-caption d-flex rounded-circle align-items-center justify-content-center bg-light gap-2 playbtn" style="height: 40px; width:40px; position: absolute; left: 10;">
+                        <img src="icons/solar--play-bold.svg" alt=""  style="width: 20px;">
+                    </div>
+                    <div class="carousel-caption ps-2 d-flex rounded-pill align-items-center bg-light gap-2" style="height: 40px; width:100px; position: absolute; left: 460;">
+                        <img src="videos/damian.webp" alt="" class="rounded-circle" style="width: 30px; height: 30px;">
+                        <span style="color: black; font-size: 12px;">Damian</span>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <video class=" w-100 rounded-4 h-100" autoplay muted loop>
                         <source src="videos/207c929a31776e3bef96f5a66613b282.mp4" type="video/mp4">
                     </video>
+                    <div class="carousel-caption d-flex rounded-circle align-items-center justify-content-center bg-light gap-2 playbtn" style="height: 40px; width:40px; position: absolute; left: 10;">
+                        <img src="icons/solar--play-bold.svg" alt=""  style="width: 20px;">
+                    </div>
+                    <div class="carousel-caption ps-2 d-flex rounded-pill align-items-center bg-light gap-2" style="height: 40px; width:100px; position: absolute; left: 460;">
+                        <img src="videos/sasah.webp" alt="" class="rounded-circle" style="width: 30px; height: 30px;">
+                        <span style="color: black; font-size: 12px;">Sasha</span>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <video class=" w-100 rounded-4 h-100" autoplay muted loop>
                         <source src="videos/55d8f62103d1ecc245b4dd35f264528c.mp4" type="video/mp4">
                     </video>
+                    <div class="carousel-caption d-flex rounded-circle align-items-center justify-content-center bg-light gap-2 playbtn" style="height: 40px; width:40px; position: absolute; left: 10;">
+                        <img src="icons/solar--play-bold.svg" alt=""  style="width: 20px;">
+                    </div>
+                    <div class="carousel-caption ps-2 d-flex rounded-pill align-items-center bg-light gap-2" style="height: 40px; width:100px; position: absolute; left: 460;">
+                        <img src="videos/dmazing.webp" alt="" class="rounded-circle" style="width: 30px; height: 30px;">
+                        <span style="color: black; font-size: 12px;">Dmazing</span>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <video class=" w-100 rounded-4 h-100" autoplay muted loop>
                         <source src="videos/ac62a2fc19e57a12b57074daf22257ab.mp4" type="video/mp4">
                     </video>
+                    <div class="carousel-caption d-flex rounded-circle align-items-center justify-content-center bg-light gap-2 playbtn" style="height: 40px; width:40px; position: absolute; left: 10;">
+                        <img src="icons/solar--play-bold.svg" alt=""  style="width: 20px;">
+                    </div>
+                    <div class="carousel-caption ps-2 d-flex rounded-pill align-items-center bg-light gap-2" style="height: 40px; width:100px; position: absolute; left: 460;">
+                        <img src="videos/pheno.webp" alt="" class="rounded-circle" style="width: 30px; height: 30px;">
+                        <span style="color: black; font-size: 12px;">Phenomenon Studio</span>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <video class=" w-100 rounded-4 h-100" autoplay muted loop>
                         <source src="videos/c0691ec9b6194ee87280db9c77c4d6bc.mp4" type="video/mp4">
                     </video>
+                    <div class="carousel-caption d-flex rounded-circle align-items-center justify-content-center bg-light gap-2 playbtn" style="height: 40px; width:40px; position: absolute; left: 10;">
+                        <img src="icons/solar--play-bold.svg" alt=""  style="width: 20px;">
+                    </div>
+                    <div class="carousel-caption ps-2 d-flex rounded-pill align-items-center bg-light gap-2" style="height: 40px; width:100px; position: absolute; left: 460;">
+                        <img src="videos/negidesign.webp" alt="" class="rounded-circle" style="width: 30px; height: 30px;">
+                        <span style="color: black; font-size: 12px;">Negi Design</span>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <video class=" w-100 rounded-4 h-100" autoplay muted loop>
                         <source src="videos/c3ee9f45c60f0027cadde8a404feaddb.mp4" type="video/mp4">
                     </video>
+                    <div class="carousel-caption d-flex rounded-circle align-items-center justify-content-center bg-light gap-2 playbtn" style="height: 40px; width:40px; position: absolute; left: 10;">
+                        <img src="icons/solar--play-bold.svg" alt=""  style="width: 20px;">
+                    </div>
+                    <div class="carousel-caption ps-2 d-flex rounded-pill align-items-center bg-light gap-2" style="height: 40px; width:100px; position: absolute; left: 460;">
+                        <img src="videos/vidcap1.webp" alt="" class="rounded-circle" style="width: 30px; height: 30px;">
+                        <span style="color: black; font-size: 12px;">Qclay</span>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <video class=" w-100 rounded-4 h-100" autoplay muted loop>
                         <source src="videos/c5c9883a1c959a59c1bdd9c8a7d66632.mp4" type="video/mp4">
                     </video>
+                    <div class="carousel-caption d-flex rounded-circle align-items-center justify-content-center bg-light gap-2 playbtn" style="height: 40px; width:40px; position: absolute; left: 10;">
+                        <img src="icons/solar--play-bold.svg" alt=""  style="width: 20px;">
+                    </div>
+                    <div class="carousel-caption ps-2 d-flex rounded-pill align-items-center bg-light gap-2" style="height: 40px; width:100px; position: absolute; left: 460;">
+                        <img src="videos/igor.webp" alt="" class="rounded-circle" style="width: 30px; height: 30px;">
+                        <span style="color: black; font-size: 12px;">Igor Savelev</span>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <video class=" w-100 rounded-4 h-100" autoplay muted loop>
                         <source src="videos/c84b12685f2e681b81d49ec79fc94648.mp4" type="video/mp4">
                     </video>
+                    <div class="carousel-caption d-flex rounded-circle align-items-center justify-content-center bg-light gap-2 playbtn" style="height: 40px; width:40px; position: absolute; left: 10;">
+                        <img src="icons/solar--play-bold.svg" alt=""  style="width: 20px;">
+                    </div>
+                    <div class="carousel-caption ps-2 d-flex rounded-pill align-items-center bg-light gap-2" style="height: 40px; width:100px; position: absolute; left: 460;">
+                        <img src="videos/malvahStudio.webp" alt="" class="rounded-circle" style="width: 30px; height: 30px;">
+                        <span style="color: black; font-size: 12px;">Malva Studio</span>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <video class=" w-100 rounded-4 h-100" autoplay muted loop>
                         <source src="videos/ef7a619c805e5a92902b0bf034c852fa.mp4" type="video/mp4">
                     </video>
+                    <div class="carousel-caption d-flex rounded-circle align-items-center justify-content-center bg-light gap-2 playbtn" style="height: 40px; width:40px; position: absolute; left: 10;">
+                        <img src="icons/solar--play-bold.svg" alt=""  style="width: 20px;">
+                    </div>
+                    <div class="carousel-caption ps-2 d-flex rounded-pill align-items-center bg-light gap-2" style="height: 40px; width:100px; position: absolute; left: 460;">
+                        <img src="videos/xin.webp" alt="" class="rounded-circle" style="width: 30px; height: 30px;">
+                        <span style="color: black; font-size: 12px;">Xin Yan</span>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <video class=" w-100 rounded-4 h-100" autoplay muted loop>
                         <source src="videos/ef8d2f9e371433f1fc9620fb33e6cd12.mp4" type="video/mp4">
                     </video>
+                    <div class="carousel-caption d-flex rounded-circle align-items-center justify-content-center bg-light gap-2 playbtn" style="height: 40px; width:40px; position: absolute; left: 10;">
+                        <img src="icons/solar--play-bold.svg" alt=""  style="width: 20px;">
+                    </div>
+                    <div class="carousel-caption ps-2 d-flex rounded-pill align-items-center bg-light gap-2" style="height: 40px; width:100px; position: absolute; left: 460;">
+                        <img src="videos/threedee.webp" alt="" class="rounded-circle" style="width: 30px; height: 30px;">
+                        <span style="color: black; font-size: 12px;">Three Dee</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -532,7 +637,7 @@
     <!-- first row -->
   <section class="discoverCards"  style="margin:20px 5% 3% 5%; width: 90%;">
         <!-- first card  -->
-    <div>
+    <div style="position: relative;" class="contentCard">
         <img src="images/1.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -552,9 +657,17 @@
                     <span style="font-size: 11px;">11.3k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
         <!-- 2nd card  -->
-         <div>
+         <div style="position: relative;" class="contentCard">
         <img src="images/2.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -574,10 +687,18 @@
                     <span style="font-size: 11px;">11.3k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Norm Ai badges</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
 
         <!-- 3rd card  -->
-         <div >
+         <div style="position: relative;" class="contentCard" >
         <img src="images/3.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -597,10 +718,18 @@
                     <span style="font-size: 11px;">11.3k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
 
         <!-- 4th card  -->
-         <div>
+         <div style="position: relative;" class="contentCard">
         <img src="images/4.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -620,12 +749,20 @@
                     <span style="font-size: 11px;">11.3k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
   </section>
    <!-- second row -->
      <section class="discoverCards" style="margin:3% 5% 2% 5%; width: 90%;">
         <!-- first card  -->
-    <div >
+    <div style="position: relative;" class="contentCard" >
         <img src="images/5.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -645,9 +782,17 @@
                     <span style="font-size: 11px;">29.3k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
         <!-- 2nd card  -->
-         <div>
+         <div style="position: relative;" class="contentCard">
         <img src="images/6.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -667,10 +812,18 @@
                     <span style="font-size: 11px;">3.3k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
 
         <!-- 3rd card  -->
-         <div >
+         <div style="position: relative;" class="contentCard">
         <img src="images/7.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -690,10 +843,18 @@
                     <span style="font-size: 11px;">18.8k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
 
         <!-- 4th card  -->
-         <div>
+         <div style="position: relative;" class="contentCard">
         <img src="images/8.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -713,12 +874,20 @@
                     <span style="font-size: 11px;">29.3k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
   </section>
 <!-- third row  -->
   <section class="discoverCards" style="margin:3% 5% 2% 5%; width: 90%;">
         <!-- first card  -->
-    <div >
+    <div style="position: relative;" class="contentCard" >
         <img src="images/9.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -738,9 +907,17 @@
                     <span style="font-size: 11px;">2.7k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
         <!-- 2nd card  -->
-         <div>
+         <div style="position: relative;" class="contentCard">
         <img src="images/10.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -759,10 +936,18 @@
                     <span style="font-size: 11px;">1.8k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
 
         <!-- 3rd card  -->
-         <div >
+         <div style="position: relative;" class="contentCard">
         <img src="images/11.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -782,10 +967,18 @@
                     <span style="font-size: 11px;">95.6k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
 
         <!-- 4th card  -->
-         <div>
+         <div style="position: relative;" class="contentCard">
         <img src="images/12.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -805,6 +998,14 @@
                     <span style="font-size: 11px;">253</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
 
         
@@ -814,7 +1015,7 @@
   <!-- fourth row  -->
     <section class="discoverCards" style="margin:3% 5% 2% 5%; width: 90%;">
         <!-- first card  -->
-    <div >
+    <div style="position: relative;" class="contentCard">
         <img src="images/13.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -834,9 +1035,17 @@
                     <span style="font-size: 11px;">52.6k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
         <!-- 2nd card  -->
-         <div>
+         <div style="position: relative;" class="contentCard">
         <img src="images/14.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -856,10 +1065,18 @@
                     <span style="font-size: 11px;">25k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
 
         <!-- 3rd card  -->
-         <div >
+         <div style="position: relative;" class="contentCard">
         <img src="images/15.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -879,10 +1096,18 @@
                     <span style="font-size: 11px;">1.9k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
 
         <!-- 4th card  -->
-         <div>
+         <div style="position: relative;" class="contentCard">
         <img src="images/16.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -902,12 +1127,20 @@
                     <span style="font-size: 11px;">708</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
   </section>
   <!-- fifth row  -->
     <section class="discoverCards" style="margin:3% 5% 2% 5%; width: 90%;">
         <!-- first card  -->
-    <div >
+    <div style="position: relative;" class="contentCard">
         <img src="images/17.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -927,9 +1160,17 @@
                     <span style="font-size: 11px;">1.4k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
         <!-- 2nd card  -->
-         <div>
+         <div style="position: relative;" class="contentCard">
         <img src="images/18.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -949,10 +1190,18 @@
                     <span style="font-size: 11px;">6.7k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
 
         <!-- 3rd card  -->
-         <div >
+         <div style="position: relative;" class="contentCard" >
         <img src="images/19.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -972,10 +1221,18 @@
                     <span style="font-size: 11px;">3.3k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
 
         <!-- 4th card  -->
-         <div>
+         <div style="position: relative;" class="contentCard">
         <img src="images/20.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -995,12 +1252,20 @@
                     <span style="font-size: 11px;">2.1k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
   </section>
   <!-- sixth row  -->
     <section class="discoverCardslast" style="margin:3% 5% 2% 5%; width: 90%;">
         <!-- first card  -->
-    <div >
+    <div style="position: relative;" class="contentCard" >
         <img src="images/21.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh; ">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -1021,9 +1286,17 @@
                     <span style="font-size: 11px;">19k</span>
                 </div>
             </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
+            </div>
         </div>
         <!-- 2nd card  -->
-         <div>
+         <div style="position: relative;" class="contentCard">
         <img src="images/22.webp" alt="" class="rounded-2 discoverImage" style="height: 35vh;">
             <!-- caption  -->
             <div class="d-flex justify-content-between align-items-center">
@@ -1042,6 +1315,14 @@
                     <img src="icons/flowbite--eye-solid.svg" alt="" width="12px">
                     <span style="font-size: 11px;">1.8k</span>
                 </div>
+            </div>
+            <div class="d-flex align-items-center gap-5 hoverContent" style="position: absolute; bottom: 30; left: 10; background-color: rgba(0, 0, 0, 0.096); height: 50px;">
+                <span style="font-size: 16px; color: white; font-weight: bold;">Happy Holidays by</span>
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;"><img src="icons/ep--collection-tag.svg" alt="" width="15px"></div>
+                    <div class="rounded-circle bg-light d-flex justify-content-center align-items-center" style="width: 30px; height: 30px;"><img src="icons/lucide--heart.svg" alt="" width="15px"></div>
+                </div>
+                
             </div>
         </div>
 
